@@ -1,0 +1,20 @@
+apiVersion: v1alpha1
+kind: CatalogItemInstance
+metadata:
+  name: dcm-gitops-two-tier-web
+spec:
+  display_name: dcm-gitops-two-tier-web
+  catalog_item_id: dcm-gitops-two-tier-web
+  user_values:
+    - resource: backend
+      path: metadata.name
+      value: dcm-gitops-backend
+    - resource: backend
+      path: image.reference
+      value: docker.io/library/nginx:alpine
+    - resource: frontend
+      path: metadata.name
+      value: dcm-gitops-frontend
+    - resource: frontend
+      path: image.reference
+      value: docker.io/library/httpd:alpine
